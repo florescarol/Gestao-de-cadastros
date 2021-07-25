@@ -1,0 +1,209 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(209, 209, 209);
+}
+
+#navigation {
+    background-color: rgb(239, 239, 239);
+    height: 100%;
+    width: 23%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+#navigation h2 {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+#navigation button {
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: black;
+    font-weight: 500;
+    padding: 20px 0;
+    padding-left: 10px;
+}
+
+#navigation button:hover {
+    background-color: rgb(209, 209, 209);
+    font-weight: 600;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    font-size: 16px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer p {
+    width: 70%;
+}
+
+footer div {
+    align-self: flex-end;
+}
+
+footer img {
+    height: 24px;
+}
+
+#pageContent {
+    margin-left: 23%;
+    height: 100%;
+    width: 77%;
+    background-color: rgb(209, 209, 209);
+}
+
+#clientsPage, #editFormClients, #formContainerClients,
+#productsPage, #editFormProducts, #formContainerProducts,
+#purchasesPage, #editFormPurchases, #formContainerPurchases {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    padding: 10px;
+    padding-bottom: 1px;
+    display: inline-block;
+}
+
+.title p {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#formContainerClients, #editFormClients,
+#formContainerProducts, #editFormProducts,
+#formContainerPurchases, #editFormPurchases {
+    width: 100%;
+    margin-top: 2%;
+}
+
+form, .container {
+    margin: 1%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+input, #clientState, #productType, #productCountry {
+    font-size: 20px;
+    width: 48%;
+    border: solid black 1px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 1%;
+}
+
+input:focus, #clientState:focus, #productType:focus, #productCountry:focus {
+    outline: 0;
+    border: solid black 2px;
+}
+
+#clientState, #productType, #productCountry {
+    font-size: 20px;
+    width: 49.4%;
+}
+
+.formLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#idFormClients, #idFormProducts, #idFormPurchases {
+    margin-right: 1.1%;
+    display: none;
+}
+
+#idFormClients input, #idFormProducts input, #idFormPurchases input {
+    width: 100%;
+}
+
+#pageContent button {
+    font-size: 20px;
+    width: 49.2%;
+    border: solid black 1px;
+    border-radius: 10px;
+    margin-bottom: 1%;
+    overflow-x: auto;
+}
+
+#pageContent button:hover {
+    cursor: pointer;
+    background-color: rgb(157, 49, 43);
+    color: white;
+    font-weight: 700;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.headerTable th {
+    background-color: rgb(157, 49, 43);
+    color: white;
+    font-size: 18px;
+    padding: 5px 20px;
+}
+
+tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.headerTable, #clientsTable, #productsTable, #purchasesTable {
+    width: 98%;
+    margin: 1%;
+    text-align: center;
+}
+
+#clientsTable td, #productsTable td, #purchasesTable td {
+    padding: 5px 20px;
+}
+
+#clientsTable tr:nth-child(even),
+#productsTable tr:nth-child(even),
+#purchasesTable tr:nth-child(even) {
+    background-color: rgb(239, 239, 239);
+}
+
+#clientsTable tr:nth-child(odd),
+#productsTable tr:nth-child(odd),
+#purchasesTable tr:nth-child(odd) {
+    background-color: rgb(223, 223, 223);
+} 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }

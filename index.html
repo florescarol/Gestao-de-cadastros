@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./imgs/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Gestão</title>
+</head>
+<body>
+    <div id="navigation">
+        <img src="./imgs/titulo.png" alt="Logo da empresa">
+        <h2>Sistema de gerenciamento</h2>
+        <button type="button" onclick="clientsPage()">Clientes</button>
+        <button type="button" onclick="productsPage()">Inventário</button>
+        <button type="button" onclick="purchasesPage()">Histórico de compras</button>
+        <footer>
+            <p>Desenvolvido por Carolina Flores para Hiring Coders.</p>
+            <div>
+                <a href="https://www.linkedin.com/in/carolinaflores21/" target="_blank"><img src="./imgs/linkedin.png" alt="Linkedin"></a>
+                <a href="https://github.com/florescarol" target="_blank"><img src="./imgs/github.png" alt="Github"></a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="pageContent">
+        <div id="clientsPage">
+            <div class="title">
+                <h1>Gestão de clientes</h1>
+            </div>
+
+            <div class="container">
+                <button onclick="showFormClients()">Criar novo cadastro</button>
+                <button onclick="showFormEditClients()">Editar cadastro já existente</button>
+            </div>
+
+            <div id="idFormClients">
+                <form id="formIdClients">
+                    <input placeholder="Digite o ID do cliente para alterar seus dados" id="idClient">
+                </form>
+            </div>
+
+            <div id="formContainerClients">
+                <form id="formClients">
+                    <div class="formLine">
+                        <input placeholder="Nome completo" type="text" id="clientName">
+                        <input placeholder="Email" type="email" id="clientEmail">
+                    </div>
+    
+                    <div class="formLine">
+                        <select id="clientState">
+                            <option value="none" selected disabled hidden>Estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <input placeholder="Cidade" id="clientCity">
+                    </div>
+                    
+                    <div class="formLine">
+                        <input placeholder="Endereço" id="clientAdress">
+                        <button type="button" onclick="createClient()" id="btnCreateClient">Criar novo cadastro</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="editFormClients">
+                <form>
+                    <div class="formLine">
+                        <button type="button" onclick="deleteClient()">Deletar cadastro</button>
+                        <button type="button" onclick="editClient()">Salvar mudanças</button>
+                    </div>
+                </form>
+            </div>
+
+            <table id="clientsTable">
+                <tr class="headerTable">
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Endereço</th>
+                </tr>
+            </table>
+        </div>   
+        
+        <div id="productsPage">
+            <div class="title">
+                <h1>Gestão de produtos</h1>
+            </div>
+
+            <div class="container">
+                <button onclick="showFormProducts()">Criar novo cadastro</button>
+                <button onclick="showFormEditProducts()">Editar cadastro já existente</button>
+            </div>
+
+            <div id="idFormProducts">
+                <form id="formIdProducts">
+                    <input placeholder="Digite o ID do produto para alterar seus dados" id="idProduct">
+                </form>
+            </div>
+
+            <div id="formContainerProducts">
+                <form id="formProducts">
+                    <div class="formLine">
+                        <input placeholder="Produto" id="productName">
+                        <select id="productType">
+                            <option value="none" selected disabled hidden>Tipo</option>
+                            <option value="Tinto">Tinto</option>
+                            <option value="Branco">Branco</option>
+                            <option value="Rosé">Rosé</option>
+                        </select>
+                    </div>
+    
+                    <div class="formLine">
+                        <select id="productCountry">
+                            <option value="none" selected disabled hidden>País</option>
+                            <option value="Brasil">Brasil</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="África do Sul">África do Sul</option>
+                        </select>
+                        <input type="number" placeholder="Quantidade" id="productStorage">
+                    </div>
+    
+                    <div class="formLine">
+                        <input type="number" min="0" placeholder="Preço (em reais)" id="productPrice">
+                        <button type="button" onclick="createProduct()" id="btnCreateProduct">Criar novo produto</button>
+                    </div>
+                </form>
+            </div>
+          
+            <div id="editFormProducts">
+                <form>
+                    <div class="formLine">
+                        <button type="button" onclick="deleteProduct()">Deletar cadastro</button>
+                        <button type="button" onclick="editProduct()">Salvar mudanças</button>
+                    </div>
+                </form>
+            </div>
+
+            <table id="productsTable">
+                <tr class="headerTable">
+                    <th scope="col">ID</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">País</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Estoque inicial</th>
+                    <th scope="col">Quantidade comprada</th>
+                    <th scope="col">Estoque atual</th>
+                </tr>
+            </table>
+        </div>
+
+        <div id="purchasesPage">
+            <div class="title">
+                <h1>Gestão do histórico de compras</h1>
+            </div>
+
+            <div class="container">
+                <button onclick="showFormPurchase()">Criar nova compra</button>
+                <button onclick="showFormEditPurchase()">Editar compra já existente</button>
+            </div>
+
+            <div id="idFormPurchases">
+                <form id="formIdPurchases">
+                    <input placeholder="Digite o ID da compra para alterar seus dados" id="idPurchase">
+                </form>
+            </div>
+
+            <div id="formContainerPurchases">
+                <form id="formPurchases">
+                    <div class="formLine">
+                        <input placeholder="ID do cliente" id="clientIdPurchase">
+                        <input placeholder="ID do produto" id="productIdPurchase">
+                    </div>
+    
+                    <div class="formLine">
+                        <input type="number" placeholder="Quantidade comprada" id="quantityPurchase">
+                        <button type="button" onclick="createPurchases()" id="btnCreatePurchases">Criar nova compra</button>
+                    </div>
+                </form>
+            </div>
+          
+            <div id="editFormPurchases">
+                <form>
+                    <div class="formLine">
+                        <button type="button" onclick="deletePurchase()">Deletar compra</button>
+                        <button type="button" onclick="editPurchase()">Salvar mudanças</button>
+                    </div>
+                </form>
+            </div>
+
+            <table id="purchasesTable">
+                <tr class="headerTable">
+                    <th scope="col">ID da compra</th>
+                    <th scope="col">ID do cliente</th>
+                    <th scope="col">ID do produto</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Quantidade comprada</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
